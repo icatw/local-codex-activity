@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "export:profile": "node src/export-profile.js",
     "start": "node src/server.js",
     "test": "node --test"
   },

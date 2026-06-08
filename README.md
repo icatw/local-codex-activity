@@ -67,6 +67,26 @@ npm test
 测试覆盖增量 token 解析、累计值排除、时区边界、按日聚合、缺失目录、
 API 响应、路径穿越防护及热力图日期和颜色分级。
 
+## 导出到 GitHub Profile
+
+生成适合 GitHub README 嵌入的隐私友好 SVG：
+
+```bash
+npm run export:profile -- --output /path/to/profile-repo/assets/codex-activity.svg --timezone Asia/Shanghai
+```
+
+该 SVG 只包含 52 周每日强度等级、活跃天数和更新时间，不包含精确 token
+总量、会话标题、项目路径、提示词或回答。
+
+本机已提供同步脚本：
+
+```bash
+scripts/update-profile-readme.sh
+```
+
+它会重新生成 `assets/codex-activity.svg`，在 Profile README 仓库有变化时
+提交并推送。
+
 ## 限制
 
 - 只能统计当前仍保存在本机 session JSONL 中的事件。
